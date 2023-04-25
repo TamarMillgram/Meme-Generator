@@ -1,0 +1,28 @@
+/* 
+
+.canvas-container{
+grid-template-columns: 1;
+}
+
+.editor-container{
+    grid-template-columns: 2;
+} */
+
+
+ .meme-container{
+    flex-direction: row;
+    /* margin-block-start: 1rem; */
+    margin: 2rem 2rem 2rem;
+ }
+
+ .editor-container{
+    flex-direction: column;
+ }
+
+ .canvas-container{
+    width: 500px;
+ }
+
+ .editor-container{
+    width: 500px;
+ }

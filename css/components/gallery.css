@@ -1,0 +1,43 @@
+.gallery-container {
+    background-color: #383b42;
+    border-radius: 2rem;
+    margin: 1rem;
+    width: 100%;
+}
+
+.search-nav {
+    flex-direction: row;
+    padding: 1em 2em 2em;
+}
+
+.search-nav li a {
+    text-decoration: none;
+    padding: 0.7em;
+}
+
+.search-nav ul {
+    background-color: #fefefe;
+    border-radius: 2em;
+    border: none;
+}
+
+.btn-more {
+    border: none;
+    border-radius: 2em;
+    background-image: var(--clr-gradient);
+    width: 5em;
+    height: 2em;
+    color: #fefefe;
+}
+
+.search-nav input {
+    border: none;
+    border-radius: 0.5em;
+    background-color: #22252c;
+}
+
+.gallery img {
+    border-radius: 1.5em;
+    display: block;
+    cursor: pointer;
+}

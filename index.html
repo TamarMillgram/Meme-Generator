@@ -11,7 +11,7 @@
     <title>MemeGen</title>
 </head>
 
-<body onload="">
+<body onload="onInitGallery()">
 
     <div class="main-screen" onclick="toggleMenu()"></div>
 
@@ -29,17 +29,35 @@
 
     </header>
     <main>
-        <section class="image-gallery display-none ">
+        <section class="gallery-container align-center" >
+
+            <nav class="search-nav flex justify-evenly align-center ">
+              
+                    <input type="text" class="search-box" data-trans="search-box-placeholder" oninput="onSetFilterBy(value)" placeholder="Search"/>
+                    <ul class="keywords flex clean-list align-center space-between">
+                        <li class="crazy"><a href="#">Crazy</a></li>
+                        <li class="funny"><a href="#">Funny</a></li>
+                        <li class="happy"><a href="#">Happy</a></li>
+                        <li class="sad"><a href="#">Sad</a></li>
+                    </ul>
+                    <button class="btn btn-more">More</button>
+         
+            </nav>
+
+            <div class="gallery">
+            </div>
+
+
         </section>
 
-        <section class="meme-container flex align-center justify-evenly ">
+        <section class="meme-container flex align-center justify-evenly display-none ">
             <div class="canvas-container">
                 <canvas id="my-canvas" width="500" height="500"></canvas>
             </div>
             <div class="editor-container flex align-center">
                 <ul class="space-between clean-list">
                     <li>
-                        <input type="text" placeholder="Add Text">
+                        <input type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
                     </li>
                     <li class="meme-control">
                         <button class="btn btn-switch"><i class="fa-solid fa-up-down"></i></button>
@@ -93,7 +111,9 @@
 
     <script src="js/services/utils.js"></scriptsrc>></script>
     <script src="js/services/storage.js"></scriptsrc>></script>
+    <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
+    <script src="js/controllers/ galleryController.js"></script>
     <script src="js/controllers/memeController.js"></script>
 </body>
 

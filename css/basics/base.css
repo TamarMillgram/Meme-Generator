@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-color:  #383b42 ;
+    background-color: #22252c;
     margin: 0;
     padding: 0;
     font-size: 0.875rem;
@@ -33,7 +33,7 @@ a{
     color: black;
 }
 
-/* footer{
-   position: relative;
 
-} */
+img{
+    width: 100%;
+}

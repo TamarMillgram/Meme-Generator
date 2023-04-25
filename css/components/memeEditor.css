@@ -3,3 +3,7 @@
 .canvas-container, #my-canvas{
     background-color: var(--clr-2);
  }
+
+.meme-container{
+    background-color: #383b42;
+} 

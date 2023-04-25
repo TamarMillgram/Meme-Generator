@@ -21,6 +21,7 @@ grid-template-columns: 1;
 
  .canvas-container{
     width: 500px;
+    height: 500px;
  }
 
  .editor-container{

@@ -1,7 +1,5 @@
 let gMeme
-let gImgs = [{ id: 1, url: 'imgs1/1.jpg', keywords: ['funny', 'person'] }];
-
-
+let imgId
 
 function getMeme() {
     return gMeme;
@@ -10,6 +8,10 @@ function getMeme() {
 
 createMeme()
 
+function setImg(imgId){
+    gMeme.selectedImgId = imgId
+}
+
 
 function setLineTxt(txt) {
     gMeme.lines[0].txt = txt
@@ -17,7 +19,7 @@ function setLineTxt(txt) {
 
 function createMeme() {
     gMeme = {
-        selectedImgId: 'imgs1/1.jpg',
+        selectedImgId: '',
         selectedLineIdx: 0,
         lines: [
             {
@@ -29,3 +31,4 @@ function createMeme() {
         ],
     }
 }
+

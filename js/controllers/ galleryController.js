@@ -7,17 +7,14 @@ function onInitGallery() {
 
 
 function renderGallery() {
-
+    let imgs = getImgs()
     const gallery = document.querySelector('.gallery')
-    let img = ''
-    for (let i = 0; i < 18; i++) {
-        img += `<img src="imgs1/${i + 1}.jpg" onclick="onImgSelect(this)">`
-    }
-
-    gallery.innerHTML = img
+    const strHTMLs = imgs.map((img,idx) =>`<img class="img${idx+1}" src="${img.url}" onclick="onImgSelect(this.id)" id="${img.id}">`)
+    gallery.innerHTML =  strHTMLs.join('')
 }
 
-function onImgSelect(img){
-    setImg() 
+function onImgSelect(imgId){
+    setImg(imgId) 
     renderMeme()
 }
+

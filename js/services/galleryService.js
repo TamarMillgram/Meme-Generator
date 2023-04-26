@@ -14,7 +14,7 @@ function  _createImgs() {
 
     numOfImgs.forEach((num) => {
         let img = {
-            id: num + 1,
+            id: num,
             url: `imgs1/${num}.jpg`,
             keywords: ['funny', 'cat']
         }

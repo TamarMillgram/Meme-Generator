@@ -1,4 +1,6 @@
 function onUploadImg() {
+    const gElCanvas = document.querySelector('#my-canvas')
+    const gCtx = gElCanvas.getContext('2d')
     const imgDataUrl = gElCanvas.toDataURL('image/jpeg') // Gets the canvas content as an image format
 
     // A function to be called if request succeeds

@@ -50,7 +50,7 @@
 
         </section>
 
-        <section class="meme-container flex align-center justify-evenly display-none ">
+        <section class="meme-container flex align-center justify-evenly  ">
             <div class="canvas-container">
                 <canvas id="my-canvas" width="500" height="500"></canvas>
             </div>
@@ -60,42 +60,42 @@
                         <input type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
                     </li>
                     <li class="meme-control">
-                        <button class="btn btn-switch"><i class="fa-solid fa-up-down"></i></button>
+                        <button class="btn btn-switch" onclick="onSwitchLine()"><i class="fa-solid fa-up-down"></i></button>
                         <button class="btn btn-add" onclick="onAddLine()"><i class="fa-solid fa-plus"></i></button>
-                        <button class="btn btn-remove"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="btn btn-remove" onclick="onRemoveLine()"><i class="fa-solid fa-trash-can"></i></button>
                     </li>
                     <li>
                         <div class="test-editor">
-                            <button class="btn btn-font-bigger"><i class="fa-solid fa-a"></i><i
+                            <button class="btn btn-font-bigger" onclick="onSetFontSize(1)"><i class="fa-solid fa-a"></i><i
                                     class="fa-solid fa-plus"></i></button>
-                            <button class="btn btn-font-smaller"><i class="fa-solid fa-a"></i><i
+                            <button class="btn btn-font-smaller" onclick="onSetFontSize(0)"><i class="fa-solid fa-a"></i><i
                                     class="fa-solid fa-minus"></i></button>
-                            <button class="btn btn-left"><i class="fa-solid fa-indent"></i></button>
-                            <button class="btn btn-center"><i class="fa-solid fa-align-justify"></i></button>
-                            <button class="btn btn-right"><i class="fa-solid fa-outdent"></i></button>
+                            <button class="btn btn-left" onclick="onSetAlignText('left')"><i class="fa-solid fa-outdent"></i></button>
+                            <button class="btn btn-center" onclick="onSetAlignText('center')"><i class="fa-solid fa-align-justify"></i></button>
+                            <button class="btn btn-right" onclick="onSetAlignText('right')"><i class="fa-solid fa-indent"></i></button>
                         </div>
                         <div>
-                            <select id="font-style" class="btn font-style">
+                            <select id="font-style" class="btn font-style" onchange="onSetFontFamily(this.value)">
                                 <option value="impact">Impact</option>
                                 <option value="arial">Arial</option>
                                 <option value="times new roman">Times New Roman</option>
                                 <!-- <option value="triangle">Triangle</option> -->
                             </select>
                             <button class="btn-control btn-fill"><i class="fa-solid fa-underline"></i>
-                                <input type="color" oninput="onSetFillColor(this.value)"></button>
-                            <button class="btn-control btn-stroke"><i class="fa-sharp fa-solid fa-palette"></i>
                                 <input type="color" oninput="onSetStrokeColor(this.value)"></button>
+                            <button class="btn-control btn-stroke"><i class="fa-sharp fa-solid fa-palette"></i>
+                                <input type="color" oninput="onSetFillColor(this.value)"></button>
                         </div>
                     </li>
                     <li>
                         <div class="stickers"></div>
                     </li>
                     <li>
-                        <button class="btn save-btn" onclick="onUploadImg()"><i
-                                class="fa-sharp fa-solid fa-share-nodes"></i> Share</button>
-                        <button class="btn download-btn" onclick="downloadCanvas(this)"><i
+                        <button class="btn save-btn" onclick="downloadCanvas(this)"><i
+                                class="fa-sharp fa-solid fa-share-nodes"></i>Save</button>
+                        <button class="btn download-btn"><i
                                 class="fa-solid fa-download"></i> Download</button>
-                        <button class="btn share-btn"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                        <button class="btn share-btn" onclick="onUploadImg()"><i class="fa-solid fa-floppy-disk"></i>Share</button>
                     </li>
             </div>
             </ul>
@@ -109,12 +109,14 @@
 
     <!-- <footer>Tamar Millgram</footer> -->
 
-    <script src="js/services/utils.js"></scriptsrc>></script>
-    <script src="js/services/storage.js"></scriptsrc>></script>
+    <script src="js/services/utils.js"></script>
+    <script src="js/services/storage.js"></script>
     <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
     <script src="js/controllers/memeController.js"></script>
     <script src="js/controllers/ galleryController.js"></script>
+    <script src="js/services/upload-from-local.js"></script>
+    <script src="js/services/sharing-on-facebook.js"></script>
 </body>
 
 </html>

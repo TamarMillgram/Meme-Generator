@@ -7,3 +7,7 @@
 .meme-container{
     background-color: #383b42;
 } 
+
+.download-btn a{
+    text-decoration: none;
+}

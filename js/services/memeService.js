@@ -1,5 +1,7 @@
 let gMeme
 let imgId
+
+const STORAGE_KEY = 'memeDB'
 createMeme()
 
 
@@ -80,3 +82,10 @@ function createMeme() {
     }
 }
 
+function _saveBooksToStorage() {
+    saveToStorage(STORAGE_KEY, gMeme)
+}
+
+function saveMeme(){
+    
+}

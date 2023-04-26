@@ -1,0 +1,10 @@
+.about-container{
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.about-text{
+margin: 2em;
+text-align: justify;
+}
+

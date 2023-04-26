@@ -13,5 +13,6 @@
 @import url(components/about.css);
 @import url(components/gallery.css);
 @import url(components/memeEditor.css);
+@import url(components/savedMemes.css);
 
 @import url(setup/mq.css);

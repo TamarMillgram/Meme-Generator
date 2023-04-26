@@ -29,19 +29,20 @@
 
     </header>
     <main>
-        <section class="gallery-container align-center" >
+        <section class="gallery-container align-center display-none ">
 
             <nav class="search-nav flex justify-evenly align-center ">
-              
-                    <input type="text" class="search-box" data-trans="search-box-placeholder" oninput="onSetFilterBy(value)" placeholder="Search"/>
-                    <ul class="keywords flex clean-list align-center space-between">
-                        <li class="crazy"><a href="#">Crazy</a></li>
-                        <li class="funny"><a href="#">Funny</a></li>
-                        <li class="happy"><a href="#">Happy</a></li>
-                        <li class="sad"><a href="#">Sad</a></li>
-                    </ul>
-                    <button class="btn btn-more">More</button>
-         
+
+                <input type="text" class="search-box" data-trans="search-box-placeholder" oninput="onSetFilterBy(value)"
+                    placeholder="Search" />
+                <ul class="keywords flex clean-list align-center space-between">
+                    <li class="crazy"><a href="#">Crazy</a></li>
+                    <li class="funny"><a href="#">Funny</a></li>
+                    <li class="happy"><a href="#">Happy</a></li>
+                    <li class="sad"><a href="#">Sad</a></li>
+                </ul>
+                <button class="btn btn-more">More</button>
+
             </nav>
 
             <div class="gallery">
@@ -50,7 +51,7 @@
 
         </section>
 
-        <section class="meme-container flex align-center justify-evenly  ">
+        <section class="meme-container flex align-center justify-evenly ">
             <div class="canvas-container">
                 <canvas id="my-canvas" width="500" height="500"></canvas>
             </div>
@@ -60,19 +61,24 @@
                         <input type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
                     </li>
                     <li class="meme-control">
-                        <button class="btn btn-switch" onclick="onSwitchLine()"><i class="fa-solid fa-up-down"></i></button>
+                        <button class="btn btn-switch" onclick="onSwitchLine()"><i
+                                class="fa-solid fa-up-down"></i></button>
                         <button class="btn btn-add" onclick="onAddLine()"><i class="fa-solid fa-plus"></i></button>
-                        <button class="btn btn-remove" onclick="onRemoveLine()"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="btn btn-remove" onclick="onRemoveLine()"><i
+                                class="fa-solid fa-trash-can"></i></button>
                     </li>
                     <li>
                         <div class="test-editor">
-                            <button class="btn btn-font-bigger" onclick="onSetFontSize(1)"><i class="fa-solid fa-a"></i><i
-                                    class="fa-solid fa-plus"></i></button>
-                            <button class="btn btn-font-smaller" onclick="onSetFontSize(0)"><i class="fa-solid fa-a"></i><i
-                                    class="fa-solid fa-minus"></i></button>
-                            <button class="btn btn-left" onclick="onSetAlignText('left')"><i class="fa-solid fa-outdent"></i></button>
-                            <button class="btn btn-center" onclick="onSetAlignText('center')"><i class="fa-solid fa-align-justify"></i></button>
-                            <button class="btn btn-right" onclick="onSetAlignText('right')"><i class="fa-solid fa-indent"></i></button>
+                            <button class="btn btn-font-bigger" onclick="onSetFontSize(1)"><i
+                                    class="fa-solid fa-a"></i><i class="fa-solid fa-plus"></i></button>
+                            <button class="btn btn-font-smaller" onclick="onSetFontSize(0)"><i
+                                    class="fa-solid fa-a"></i><i class="fa-solid fa-minus"></i></button>
+                            <button class="btn btn-left" onclick="onSetAlignText('left')"><i
+                                    class="fa-solid fa-outdent"></i></button>
+                            <button class="btn btn-center" onclick="onSetAlignText('center')"><i
+                                    class="fa-solid fa-align-justify"></i></button>
+                            <button class="btn btn-right" onclick="onSetAlignText('right')"><i
+                                    class="fa-solid fa-indent"></i></button>
                         </div>
                         <div>
                             <select id="font-style" class="btn font-style" onchange="onSetFontFamily(this.value)">
@@ -91,20 +97,45 @@
                         <div class="stickers"></div>
                     </li>
                     <li>
-                        <button class="btn save-btn" onclick="downloadCanvas(this)"><i
-                                class="fa-sharp fa-solid fa-share-nodes"></i>Save</button>
-                        <button class="btn download-btn"><i
-                                class="fa-solid fa-download"></i> Download</button>
-                        <button class="btn share-btn" onclick="onUploadImg()"><i class="fa-solid fa-floppy-disk"></i>Share</button>
+                        <button class="btn save-btn" onclick="onSaveMeme()"><i
+                                class="fa-sharp fa-solid fa-share-nodes"></i> Save</button>
+                        <button class="btn download-btn" onclick="downloadCanvas(this)"><a class="save-btn" href="#"
+                                onclick="downloadCanvas(this)" download="my-img.jpg"> <i
+                                    class="fa-solid fa-download"></i> Download</a></button>
+                        <button class="btn share-btn" onclick="onUploadImg()"><i class="fa-solid fa-floppy-disk"></i>
+                            Share</button>
                     </li>
             </div>
             </ul>
             </div>
         </section>
 
-        <section class="about-container display-none ">
+        <section class="about-container flex align-center display-none">
+            <h2>Small Memes for big laughs</h2>
+            <div class="about-text">Welcome to Memegen, the ultimate meme generator game!
+
+                We're a team of passionate developers who love creating fun and engaging games. Our goal is to provide
+                you with a unique and entertaining experience that will keep you coming back for more.
+
+                Our meme generator game allows you to create your own memes using a variety of templates and share them
+                with your friends. Whether you're a fan of classic memes or the latest viral sensations, our game has
+                something for everyone.
+
+                But our game is more than just a simple meme generator. We've added exciting features such as a
+                leaderboard, where you can compete with other players to see who can create the most popular memes.
+                We've also included a social sharing feature, which lets you share your memes on your favorite social
+                media platforms.
+
+                We believe that gaming should be accessible to everyone, which is why we've made our game free to play.
+                We're constantly updating the game with new templates and features, so be sure to check back often.
+
+                We hope you enjoy playing our meme generator game as much as we enjoyed creating it.</div>
         </section>
 
+        <section class="saved-container align-center display-none">
+            <div class="meme-saved">
+            </div>
+        </section>
     </main>
 
     <!-- <footer>Tamar Millgram</footer> -->

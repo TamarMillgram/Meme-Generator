@@ -96,7 +96,15 @@ function onSetAlignText(align){
 }
 
 function downloadCanvas(elLink) {
+    console.log('HI')
+    gElCanvas = document.querySelector('#my-canvas')
+    gCtx = gElCanvas.getContext('2d')
     const data = gElCanvas.toDataURL() 
     elLink.href = data 
     elLink.download = 'my-img' 
+}
+
+function onSaveMeme(){
+    saveMeme()
+    renderMeme()
 }

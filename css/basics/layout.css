@@ -1,19 +1,19 @@
 
 .meme-container {
-   flex-direction: row;
+   /* flex-direction: row; */
    /* margin-block-start: 1rem; */
    margin: 2rem 2rem 2rem;
 }
 
 .editor-container {
    flex-direction: column;
-   width: 500px;
+   /* width: 500px; */
 }
 
-.canvas-container {
+/* .canvas-container {
    width: 500px;
    height: 500px;
-}
+} */
 
 .gallery {
    display: grid;
@@ -31,5 +31,4 @@
    gap: 2em;
    padding: 3em;
    margin: 0 auto;
-
 }

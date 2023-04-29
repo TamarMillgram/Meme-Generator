@@ -6,7 +6,6 @@
 
 .canvas-container {
     background-color: #22252c;
-    border-radius: 1.5em;
 }
 
 .download-btn a {
@@ -14,25 +13,21 @@
 }
 
 .editor-container {
-    padding: 20px;
-    border-radius: 10px;
     background-color: #383B42;
-    gap: 20px;
-    width: 500px;
-    height: 500px;
+    border-radius: 1em;
 }
 
 .editor-container ul {
     flex-direction: column;
-    gap: 1.5em;
+    gap: 2em;
     align-items: center;
 }
 
+
 .text-input {
-    height: 4em;
-    width: 30em;
     border-radius: 30px;
     background-color: #EBEEF3;
+    margin-top: 1em;
 }
 
 .text-input input[type="text"] {
@@ -79,16 +74,17 @@
 }
 
 .text-editor button {
-    width: 56px;
-    height: 51px;
+    width: 3em;
+    height: 3em;
+    margin-block-start: 0.5em;
     box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
-    border-radius: 10px;
+    border-radius: 1em;
     background-color: #ffffff;
     background-color: #ffffff;
 }
 
 .text-editor {
-    width: 95%;
+    /* width: 95%; */
     padding: 2em;
     border-radius: 15px;
     grid-template-columns: repeat(5, 1fr);
@@ -98,27 +94,17 @@
 }
 
 .text-editor>* {
-    margin-left: 0.5em;
+    align-items: center;
 }
 
 .text-editor>*,
 .font-style>* {
-    width: 14.3em;
-    height: 4em;
+    width: 9.4em;
+    height: 3em;
     box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
-    border-radius: 10px;
+    border-radius: 1em;
     background-color: #ffffff;
-}
-
-.font-style,
-.btn-fill,
-.btn-stroke {
-    margin-top: 1em;
-}
-
-.btn-stroke,
-.btn-fill {
-    position: relative;
+    margin-block-start: 0.5em;
 }
 
 input[type="color"] {
@@ -128,32 +114,29 @@ input[type="color"] {
     position: absolute;
 }
 
-.save-btn,
-.download-btn,
-.share-btn {
-    border-radius: 15px;
-    width: 9em;
-    height: 2.5em;
+
+.action-buttons button{
+    margin: 0.2em;
+    margin-bottom: 1em;
+    border-radius: 2em;
+    font-size: 1rem;
 }
 
 .save-btn {
-    box-shadow: 1px 6px 0 #2f7059, inset 0 5px 0 #29987b;
     background-color: #119c77;
 }
 
 .download-btn {
-    box-shadow: 1px 6px 0 #632687, inset 0 5px 0#965bb8;
     background-color: #8f44bb;
 }
 
 .share-btn {
-    box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0#3987d1;
     background-color: #1e7cd3;
 }
 
 .stickers {
-    height: 3.5em;
-    width: 29em;
+    /* height: 100%;
+    width: 100%; */
     background-color: var(--clr-2);
     padding: 0.5em;
     border-radius: 1.5em;
@@ -168,7 +151,14 @@ input[type="color"] {
 }
 
 .sticker-btn{
-    font-size: 2em;
+    font-size: 1em;
     padding-inline: 0.7em;
     background-color: transparent;
 }
+
+.menu-button{
+    border-radius: 0.2em;
+    background-color: transparent;
+    font-size: 1.5em;
+}
+

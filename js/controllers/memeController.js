@@ -90,18 +90,28 @@ function onSaveMeme() {
 
 function showMemeEditor() {
     document.querySelector('.meme-container').classList.remove('display-none')
-    document.querySelector('.meme-container').classList.add('flex')    
+    document.querySelector('.meme-container').classList.add('flex')   
+    document.querySelector('.saved-container').classList.add('display-none') 
 }
 
 function hideEditor() {
     document.querySelector('.meme-container').classList.add('display-none')
     document.querySelector('.meme-container').classList.remove('flex')
+    document.querySelector('.saved-container').classList.add('display-none')
 }
 
 function showAbout() {
     document.querySelector('.gallery-container').classList.add('display-none')
+    document.querySelector('.saved-container').classList.add('display-none')
     document.querySelector('.about-container').classList.remove('display-none')
     document.querySelector('.about-container').classList.add('flex')
+    hideEditor()
+}
+
+function showMemes() {
+    document.querySelector('.gallery-container').classList.add('display-none')
+    document.querySelector('.about-container').classList.add('display-none')
+    document.querySelector('.saved-container').classList.remove('display-none')
     hideEditor()
 }
 
@@ -128,3 +138,12 @@ function onSelectStickers(num) {
     renderStickers()
 }
 
+function onToggleMenu() {
+	document.body.classList.toggle('menu-open');
+	const elBtn = document.querySelector('.menu-button');
+	elBtn.innerText = elBtn.innerText === '☰' ? 'X' : '☰';
+}
+
+function onToggleModal() {
+	document.body.classList.toggle('modal-open');
+}

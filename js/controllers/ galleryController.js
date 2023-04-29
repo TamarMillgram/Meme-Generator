@@ -3,7 +3,7 @@
 
 function onInitGallery() {
     renderGallery()
-   
+    showGallery()
 }
 
 function renderGallery() {
@@ -24,6 +24,7 @@ function onImgSelect(imgId){
 }
 
 function showGallery() {
+    document.querySelector('.meme-saved').classList.add('display-none')
     document.querySelector('.about-container').classList.add('display-none')
     document.querySelector('.gallery-container').classList.remove('display-none')
 }

@@ -6,5 +6,18 @@
 .about-text{
 margin: 2em;
 text-align: justify;
+padding-inline: 3em;
 }
 
+.about-container h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    font-weight: bold; 
+    color: rgb(231, 126, 74); 
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    margin: 0;
+    padding: 10px 0; 
+    border-bottom: 1px solid #ccc;
+}

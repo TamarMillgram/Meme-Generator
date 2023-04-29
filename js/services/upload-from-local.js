@@ -1,4 +1,9 @@
 // The next 2 functions handle IMAGE UPLOADING to img tag from file system:
+
+gElCanvas = document.querySelector('#my-canvas')
+gCtx = gElCanvas.getContext('2d')
+
+
 function onImgInput(ev) {
     loadImageFromInput(ev, renderImg)
 }
@@ -20,5 +25,8 @@ function loadImageFromInput(ev, onImageReady) {
 
 function renderImg(img) {
     // Draw the img on the canvas
+    hideGallery()
+    showMemeEditor() 
+    // renderMeme(img)
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }

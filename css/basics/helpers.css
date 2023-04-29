@@ -23,6 +23,10 @@
     display: none;
 }
 
+.display-block {
+    display: block;
+}
+
 .justify-center {
     justify-content: center;
 }

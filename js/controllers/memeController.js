@@ -1,42 +1,17 @@
 'use strict'
-let gElCanvas
-let gCtx
+// let gElCanvas
+// let gCtx
 
 
 
-function renderMeme() {
-    const meme = getMeme()
 
-    gElCanvas = document.querySelector('#my-canvas')
-    gCtx = gElCanvas.getContext('2d')
-    const elImg = new Image()
-    elImg.src = `imgs1/${meme.selectedImgId}.jpg`
-
-    elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        gCtx.font = meme.lines[meme.selectedLineIdx].size.toString() + 'px '+ meme.lines[meme.selectedLineIdx].font
-        gCtx.strokeStyle = meme.lines[meme.selectedLineIdx].strokeColor
-        gCtx.fillStyle = meme.lines[meme.selectedLineIdx].fillColor
-        gCtx.textAlign = meme.lines[meme.selectedLineIdx].align
-        const text = (meme.lines[meme.selectedLineIdx].txt) ? meme.lines[meme.selectedLineIdx].txt : 'Add text'
-
-        // const canvasHeight = (!meme.selectedLineIdx)? gElCanvas.height/4 : gElCanvas.height/2
-        // const canvasWidth = (!meme.selectedLineIdx)? gElCanvas.width/4 :  gElCanvas.width/2
-            gCtx.strokeText(text, gElCanvas.height/4, gElCanvas.width/4)
-            gCtx.fillText(text, gElCanvas.height/4,  gElCanvas.width/4)
-      
-            gCtx.strokeText(text,  gElCanvas.height/2, gElCanvas.width/2)
-            gCtx.fillText(text, gElCanvas.height/2,  gElCanvas.width/2)
-  
-        
-    }
-}
 
 function renderMeme() {
     const gElCanvas = document.querySelector('#my-canvas')
     const gCtx = gElCanvas.getContext('2d')
     const meme = getMeme()
-    const elImg = new Image() // Create a new html img element
+
+    const elImg = new Image()
     elImg.src = `imgs1/${meme.selectedImgId}.jpg`
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
@@ -45,27 +20,26 @@ function renderMeme() {
             gCtx.fillStyle = line.fillColor
             gCtx.strokeStyle = line.strokeColor
             gCtx.textAlign = line.align
-            const canvasWidth = (!idx) ? gElCanvas.width / 2 : gElCanvas.width / 4
-            const canvasHeight = (!idx) ? gElCanvas.height / 4 : gElCanvas.height / 2
-            const text = (line.txt) ? line.txt : 'Add text'
-            gCtx.fillText(text, canvasWidth, canvasHeight)
-            gCtx.strokeText(text, canvasWidth, canvasHeight)
+            // const canvasWidth = (!idx) ? gElCanvas.width / 2 : gElCanvas.width / 4
+            // const canvasHeight = (!idx) ? gElCanvas.height / 4 : gElCanvas.height / 2
+            const text = (line.txt) ? line.txt : ''
+            gCtx.fillText(text,  line.pos.x, line.pos.y)
+            gCtx.strokeText(text,  line.pos.x, line.pos.y)
         })
     }
 }
-
 
 function onSetLineTxt(txt) {
     setLineTxt(txt)
     renderMeme()
 }
 
-function onSetFillColor(color){
+function onSetFillColor(color) {
     setFillColor(color)
     renderMeme()
 }
 
-function onSetStrokeColor(color){
+function onSetStrokeColor(color) {
     setStrokeColor(color)
     renderMeme()
 }
@@ -75,22 +49,22 @@ function onSetFontSize(size) {
     renderMeme()
 }
 
-function onSwitchLine(){
+function onSwitchLine() {
     SwitchLine()
     renderMeme()
 }
 
-function onSetFontFamily(font){
+function onSetFontFamily(font) {
     setFontFamily(font)
     renderMeme()
 }
 
-function onRemoveLine(){
+function onRemoveLine() {
     removeLine()
     renderMeme()
 }
 
-function onSetAlignText(align){
+function onSetAlignText(align) {
     setAlignText(align)
     renderMeme()
 }
@@ -99,12 +73,58 @@ function downloadCanvas(elLink) {
     console.log('HI')
     gElCanvas = document.querySelector('#my-canvas')
     gCtx = gElCanvas.getContext('2d')
-    const data = gElCanvas.toDataURL() 
-    elLink.href = data 
-    elLink.download = 'my-img' 
+    const data = gElCanvas.toDataURL()
+    elLink.href = data
+    elLink.download = 'my-img'
 }
 
-function onSaveMeme(){
+function onAddLine() {
+    addLine()
+    renderMeme()
+}
+
+function onSaveMeme() {
     saveMeme()
     renderMeme()
 }
+
+function showMemeEditor() {
+    document.querySelector('.meme-container').classList.remove('display-none')
+    document.querySelector('.meme-container').classList.add('flex')    
+}
+
+function hideEditor() {
+    document.querySelector('.meme-container').classList.add('display-none')
+    document.querySelector('.meme-container').classList.remove('flex')
+}
+
+function showAbout() {
+    document.querySelector('.gallery-container').classList.add('display-none')
+    document.querySelector('.about-container').classList.remove('display-none')
+    document.querySelector('.about-container').classList.add('flex')
+    hideEditor()
+}
+
+function onAddSticker(sticker) {
+    addSticker(sticker)
+    renderMeme()
+}
+
+function renderStickers() {
+    const elStickersContainer = document.querySelector('.stickers-container')
+    const stickers = getStickers()
+    let strHTMLs = stickers.map( (sticker) => `
+    <button class="sticker-btn" onclick="onAddSticker(this.innerText)">${sticker}</button>`).join('')
+        elStickersContainer.innerHTML = strHTMLs
+       renderMeme()
+}
+
+function onSelectStickers(num) {
+    gStickerIdx += num
+    if (gStickerIdx === -1) {
+        gStickerIdx = gStickers.length - 1
+    }
+    if (gStickerIdx === gStickers.length) gStickerIdx = 0
+    renderStickers()
+}
+

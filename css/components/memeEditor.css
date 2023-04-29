@@ -1,13 +1,174 @@
-
-
-.canvas-container, #my-canvas{
+.canvas-container,
+#my-canvas {
     background-color: var(--clr-2);
- }
+    border-radius: 1.5em;
+}
 
-.meme-container{
-    background-color: #383b42;
-} 
+.canvas-container {
+    background-color: #22252c;
+    border-radius: 1.5em;
+}
 
-.download-btn a{
+.download-btn a {
     text-decoration: none;
+}
+
+.editor-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #383B42;
+    gap: 20px;
+    width: 500px;
+    height: 500px;
+}
+
+.editor-container ul {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.text-input {
+    height: 4em;
+    width: 30em;
+    border-radius: 30px;
+    background-color: #EBEEF3;
+}
+
+.text-input input[type="text"] {
+    height: 100%;
+    width: 90%;
+    border-radius: 6em;
+    background-color: #EBEEF3;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.btn-switch {
+    box-shadow: 1px 5px 0 #048b97, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+}
+
+.btn-add {
+    box-shadow: 1px 5px 0 #015d33, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+}
+
+.btn-remove {
+    box-shadow: 1px 5px 0 #8c0606, inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-image: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+}
+
+.meme-control {
+    margin: auto;
+}
+
+.fa-btn,
+.fa-trash-can,
+.fa-up-down {
+    color: var(--clr-2);
+    font-size: 1.5em;
+}
+
+.meme-control button {
+    background-color: #ebeef3;
+    width: 4.5em;
+    height: 3.8em;
+    border-radius: 1em;
+    margin-left: 1em;
+}
+
+.text-editor button {
+    width: 56px;
+    height: 51px;
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    border-radius: 10px;
+    background-color: #ffffff;
+    background-color: #ffffff;
+}
+
+.text-editor {
+    width: 95%;
+    padding: 2em;
+    border-radius: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: cadetblue;
+    margin: auto;
+    position: relative;
+}
+
+.text-editor>* {
+    margin-left: 0.5em;
+}
+
+.text-editor>*,
+.font-style>* {
+    width: 14.3em;
+    height: 4em;
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.font-style,
+.btn-fill,
+.btn-stroke {
+    margin-top: 1em;
+}
+
+.btn-stroke,
+.btn-fill {
+    position: relative;
+}
+
+input[type="color"] {
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+.save-btn,
+.download-btn,
+.share-btn {
+    border-radius: 15px;
+    width: 9em;
+    height: 2.5em;
+}
+
+.save-btn {
+    box-shadow: 1px 6px 0 #2f7059, inset 0 5px 0 #29987b;
+    background-color: #119c77;
+}
+
+.download-btn {
+    box-shadow: 1px 6px 0 #632687, inset 0 5px 0#965bb8;
+    background-color: #8f44bb;
+}
+
+.share-btn {
+    box-shadow: 1px 6px 0 #165c9c, inset 0 5px 0#3987d1;
+    background-color: #1e7cd3;
+}
+
+.stickers {
+    height: 3.5em;
+    width: 29em;
+    background-color: var(--clr-2);
+    padding: 0.5em;
+    border-radius: 1.5em;
+}
+
+.btn-next, .btn-prev {
+    padding: 0;
+    margin-inline: 0.5em;
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+}
+
+.sticker-btn{
+    font-size: 2em;
+    padding-inline: 0.7em;
+    background-color: transparent;
 }

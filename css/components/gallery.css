@@ -30,6 +30,15 @@
     color: #fefefe;
 }
 
+.btn-flexible{
+    border: none;
+    border-radius: 2em;
+    background-image: var(--clr-gradient);
+    width: 7em;
+    height: 2em;
+    color: #fefefe;
+}
+
 .search-nav input {
     border: none;
     border-radius: 0.5em;
@@ -44,5 +53,27 @@
 }
 
 .gallery img:hover {
+    box-shadow: rgba(125, 123, 123, 0.56) 0px 22px 70px 4px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    display: block;
+    cursor: pointer;
+    background-color: rgb(93, 91, 91);
+    color: #fff;
+    border-radius: 1.5em;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--clr-gradient);
+}
+
+.file-upload:hover {
+    background-color: rgb(126, 126, 126);
     box-shadow: rgba(125, 123, 123, 0.56) 0px 22px 70px 4px;
 }

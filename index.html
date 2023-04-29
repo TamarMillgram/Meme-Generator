@@ -20,16 +20,16 @@
         <nav class="main-nav-container">
             <ul class="main-nav flex clean-list">
                 <li><a class="" href="#" onclick="">Memes</a></li>
-                <li><a class="" href="#" onclick="">Gallery</a></li>
-                <li><a class="" href="#" onclick="">about</a></li>
+                <li><a class="" href="#" onclick="showGallery()">Gallery</a></li>
+                <li><a class="" href="#" onclick="showAbout()">about</a></li>
             </ul>
         </nav>
 
-        <!-- <button class="btn-menu" onclick="toggleMenu()">☰</button> -->
+        <button class="btn-menu" onclick="toggleMenu()">☰</button>
 
     </header>
     <main>
-        <section class="gallery-container align-center display-none ">
+        <section class="gallery-container align-center  ">
 
             <nav class="search-nav flex justify-evenly align-center ">
 
@@ -42,6 +42,7 @@
                     <li class="sad"><a href="#">Sad</a></li>
                 </ul>
                 <button class="btn btn-more">More</button>
+                <button class="btn btn-flexible">I'm flexible</button>
 
             </nav>
 
@@ -51,55 +52,59 @@
 
         </section>
 
-        <section class="meme-container flex align-center justify-evenly ">
+        <section class="meme-container flex align-center justify-evenly display-none">
             <div class="canvas-container">
                 <canvas id="my-canvas" width="500" height="500"></canvas>
             </div>
             <div class="editor-container flex align-center">
-                <ul class="space-between clean-list">
-                    <li>
+
+                <ul class="flex space-between clean-list">
+                    <li class="text-input">
                         <input type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
                     </li>
                     <li class="meme-control">
                         <button class="btn btn-switch" onclick="onSwitchLine()"><i
-                                class="fa-solid fa-up-down"></i></button>
-                        <button class="btn btn-add" onclick="onAddLine()"><i class="fa-solid fa-plus"></i></button>
+                                class="fa-btn fa-solid fa-up-down"></i></button>
+                        <button class="btn btn-add" onclick="onAddLine()"><i
+                                class="fa-btn fa-solid fa-plus"></i></button>
                         <button class="btn btn-remove" onclick="onRemoveLine()"><i
-                                class="fa-solid fa-trash-can"></i></button>
+                                class="fa-btn fa-solid fa-trash-can"></i></button>
                     </li>
                     <li>
-                        <div class="test-editor">
+                        <div class="text-editor">
                             <button class="btn btn-font-bigger" onclick="onSetFontSize(1)"><i
                                     class="fa-solid fa-a"></i><i class="fa-solid fa-plus"></i></button>
                             <button class="btn btn-font-smaller" onclick="onSetFontSize(0)"><i
                                     class="fa-solid fa-a"></i><i class="fa-solid fa-minus"></i></button>
-                            <button class="btn btn-left" onclick="onSetAlignText('left')"><i
-                                    class="fa-solid fa-outdent"></i></button>
+                            <button class="btn btn-right" onclick="onSetAlignText('right')"><i
+                                    class="fa-sharp fa-solid fa-align-left"></i></button>
                             <button class="btn btn-center" onclick="onSetAlignText('center')"><i
                                     class="fa-solid fa-align-justify"></i></button>
-                            <button class="btn btn-right" onclick="onSetAlignText('right')"><i
-                                    class="fa-solid fa-indent"></i></button>
-                        </div>
-                        <div>
-                            <select id="font-style" class="btn font-style" onchange="onSetFontFamily(this.value)">
+                            <button class="btn btn-left" onclick="onSetAlignText('left')"><i
+                                    class="fa-sharp fa-solid fa-align-right"></i></button>
+
+                            <select id="font-style" class="font-style" onchange="onSetFontFamily(this.value)">
                                 <option value="impact">Impact</option>
                                 <option value="arial">Arial</option>
                                 <option value="times new roman">Times New Roman</option>
-                                <!-- <option value="triangle">Triangle</option> -->
                             </select>
-                            <button class="btn-control btn-fill"><i class="fa-solid fa-underline"></i>
+                            <button class="btn btn-fill"><i class="fa-solid fa-underline"></i>
                                 <input type="color" oninput="onSetStrokeColor(this.value)"></button>
-                            <button class="btn-control btn-stroke"><i class="fa-sharp fa-solid fa-palette"></i>
+                            <button class="btn btn-stroke"><i class="fa-sharp fa-solid fa-palette"></i>
                                 <input type="color" oninput="onSetFillColor(this.value)"></button>
                         </div>
                     </li>
                     <li>
-                        <div class="stickers"></div>
+                        <div class="stickers flex space-between align-center ">
+                        <button class="btn-prev" onclick="onSelectStickers(-1)">◀︎</button>
+                        <div class="stickers-container"></div>
+                        <button class="btn-next" onclick="onSelectStickers(1)">▶︎</i></button>
+                    </div>
                     </li>
                     <li>
                         <button class="btn save-btn" onclick="onSaveMeme()"><i
                                 class="fa-sharp fa-solid fa-share-nodes"></i> Save</button>
-                        <button class="btn download-btn" onclick="downloadCanvas(this)"><a class="save-btn" href="#"
+                        <button class="btn download-btn" onclick="downloadCanvas(this)"><a href="#"
                                 onclick="downloadCanvas(this)" download="my-img.jpg"> <i
                                     class="fa-solid fa-download"></i> Download</a></button>
                         <button class="btn share-btn" onclick="onUploadImg()"><i class="fa-solid fa-floppy-disk"></i>
@@ -112,24 +117,21 @@
 
         <section class="about-container flex align-center display-none">
             <h2>Small Memes for big laughs</h2>
-            <div class="about-text">Welcome to Memegen, the ultimate meme generator game!
+            <div class="about-text">Hey there, I'm a passionate developer who loves creating fun and engaging games. My
+                goal is to provide you with a unique and entertaining experience that will keep you coming back for
+                more.
 
-                We're a team of passionate developers who love creating fun and engaging games. Our goal is to provide
-                you with a unique and entertaining experience that will keep you coming back for more.
+                My latest creation is a meme generator game that allows you to create your own memes using a variety of
+                templates and share them with your friends. Whether you're a fan of classic memes or the latest viral
+                sensations, my game has something for everyone.
 
-                Our meme generator game allows you to create your own memes using a variety of templates and share them
-                with your friends. Whether you're a fan of classic memes or the latest viral sensations, our game has
-                something for everyone.
+                But my game is more than just a simple meme generator. I've added exciting features such as sharing
+                feature, which lets you share your memes on your Facebook page.
 
-                But our game is more than just a simple meme generator. We've added exciting features such as a
-                leaderboard, where you can compete with other players to see who can create the most popular memes.
-                We've also included a social sharing feature, which lets you share your memes on your favorite social
-                media platforms.
+                I believe that gaming should be accessible to everyone, which is why I've made my game free to play. I'm
+                constantly updating the game with new templates and features, so be sure to check back often.
 
-                We believe that gaming should be accessible to everyone, which is why we've made our game free to play.
-                We're constantly updating the game with new templates and features, so be sure to check back often.
-
-                We hope you enjoy playing our meme generator game as much as we enjoyed creating it.</div>
+                I hope you enjoy playing my meme generator game as much as I enjoyed creating it.</div>
         </section>
 
         <section class="saved-container align-center display-none">

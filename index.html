@@ -17,7 +17,7 @@
     <div class="main-screen modal-background" onclick="onToggleModal()"></div>
 
     <header class="main-header flex space-between align-center">
-        <div class="logo"><img src="LOGO/LOGO.png" alt=""></div>
+        <div class="logo" onclick="showGallery()"><img src="LOGO/LOGO.png" alt=""></div>
         <nav class="main-nav-container">
             <ul class="main-nav flex clean-list">
                 <li><a class="" href="#" onclick="showMemes()">Memes</a></li>
@@ -59,7 +59,7 @@
 
                 <ul class="flex space-between clean-list">
                     <li class="text-input">
-                        <input type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
+                        <input class="input" type="text" placeholder="Add Text" oninput="onSetLineTxt(value)">
                     </li>
                     <li class="meme-control">
                         <button class="btn btn-switch" onclick="onSwitchLine()"><i

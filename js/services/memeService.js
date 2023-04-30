@@ -40,7 +40,6 @@ function getMeme() {
 }
 
 function setFontSize(fontSize) {
-
     if (fontSize === 1) {
         gMeme.lines[gMeme.selectedLineIdx].size++
     } else if (fontSize === 0) {
@@ -48,13 +47,20 @@ function setFontSize(fontSize) {
     }
 }
 
-function SwitchLine() {
-    if (!gMeme.selectedLineIdx) {
-        gMeme.selectedLineIdx = 1
-    } else {
-        gMeme.selectedLineIdx = 0
-    }
 
+function getSelectedLineIdx(){
+   return gMeme.selectedLineIdx
+}
+
+
+function switchLine() {
+    const selectedLine = getSelectedLineIdx()
+    if (selectedLine === gMeme.lines.length-1) { 
+        gMeme.selectedLineIdx = 0
+    //    gMeme.line.txt =
+    } else if (selectedLine < gMeme.lines.length-1){
+        gMeme.selectedLineIdx++
+    }
 }
 
 function setAlignText(align) {
@@ -140,4 +146,25 @@ function createMeme() {
 
 function saveMeme() {
 
+}
+
+function getTxtPos(idx) {
+    const line = gMeme.lines[idx]
+    let height = line.size
+    let width = gCtx.measureText(line.txt).width
+    let xStart
+    let yStart = line.pos.y - height
+    let xEnd = width + (height / 4)
+    let yEnd = height + (height / 4)
+
+    if (line.align === 'center') xStart = line.pos.x - (width / 2) - 5
+    else if (line.align === 'start') xStart = line.pos.x - 5
+    else xStart = line.pos.x - width - 5
+
+    return { xStart, yStart, xEnd, yEnd }
+}
+
+function setTxtBorders(coords, idx) {
+    const { xStart, yStart, xEnd, yEnd } = coords
+    gMeme.lines[idx].borders = { xStart, yStart, xEnd: xStart + xEnd, yEnd: yStart + yEnd }
 }

@@ -29,6 +29,7 @@ function renderMeme() {
     }
 }
 
+
 function markSelectedTxt(coords, txt) {
     if (!txt) return
     const { xStart, yStart, xEnd, yEnd } = coords
@@ -90,10 +91,10 @@ function onSetAlignText(align) {
 
 function downloadCanvas(elLink) {
     gElCanvas = document.querySelector('#my-canvas')
-    gCtx = gElCanvas.getContext('2d')
+
     const data = gElCanvas.toDataURL()
     elLink.href = data
-    elLink.download = 'my-img'
+    elLink.download = 'my-meme'
 }
 
 function onAddLine() {
@@ -124,6 +125,7 @@ function showAbout() {
     document.querySelector('.about-container').classList.remove('display-none')
     document.querySelector('.about-container').classList.add('flex')
     hideEditor()
+    getAboutTxt()
 }
 
 function showMemes() {
@@ -164,4 +166,24 @@ function onToggleMenu() {
 
 function onToggleModal() {
     document.body.classList.toggle('modal-open');
+}
+
+function getAboutTxt(){
+    const elAboutTxtContainer = document.querySelector('.about-text')
+
+    elAboutTxtContainer.innerHTML = `Hey there, I'm a passionate developer who loves creating fun and engaging games. My
+    goal is to provide you with a unique and entertaining experience that will keep you coming back for
+    more.
+
+    My latest creation is a meme generator game that allows you to create your own memes using a variety of
+    templates and share them with your friends. Whether you're a fan of classic memes or the latest viral
+    sensations, my game has something for everyone.
+
+    But my game is more than just a simple meme generator. I've added exciting features such as sharing
+    feature, which lets you share your memes on your Facebook page.
+
+    I believe that gaming should be accessible to everyone, which is why I've made my game free to play. I'm
+    constantly updating the game with new templates and features, so be sure to check back often.
+
+    I hope you enjoy playing my meme generator game as much as I enjoyed creating it.`
 }

@@ -5,7 +5,6 @@ const gStickers = ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆
 let gStickerIdx = 0
 
 
-
 const STORAGE_KEY = 'memeDB'
 createMeme()
 
@@ -47,11 +46,9 @@ function setFontSize(fontSize) {
     }
 }
 
-
 function getSelectedLineIdx(){
    return gMeme.selectedLineIdx
 }
-
 
 function switchLine() {
     const selectedLine = getSelectedLineIdx()

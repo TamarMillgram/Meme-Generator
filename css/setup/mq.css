@@ -68,10 +68,16 @@
     }
 
     .gallery-container{
-        margin: auto;
+        margin-block-start: 1.5em;
     }
 
+    .search-bar, .keywords-bar {
+        width: 90vw;
+    }
 
+    .keywords-container {
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -111,10 +117,10 @@
         height: 100%;
     }
 
-    .gallery-container{
-        margin: auto;
-    }
 
+    .search-bar, .keywords-bar {
+        width: 700px;
+    }
 
 }
 

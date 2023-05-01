@@ -32,16 +32,23 @@
 
             <nav class="search-nav flex justify-evenly align-center ">
 
-                <input type="text" class="search-box" data-trans="search-box-placeholder" oninput="onSetFilterBy(value)"
-                    placeholder="Search" />
-                <ul class="keywords flex clean-list align-center space-between">
-                    <li class="crazy"><a href="#">Crazy</a></li>
-                    <li class="funny"><a href="#">Funny</a></li>
-                    <li class="happy"><a href="#">Happy</a></li>
-                    <li class="sad"><a href="#">Sad</a></li>
-                </ul>
-                <button class="btn btn-more">More</button>
-                <button class="btn btn-flexible">I'm flexible</button>
+                <div class="search-bar">
+                    <input type="text" list="keywords-datalist" class="search-input" placeholder="Search" oninput="renderGallery(value)" onclick="this.select()">
+                    <datalist id="keywords-datalist">
+                        <option value="crazy">
+                        <option value="funny">
+                        <option value="happy">
+                        <option value="sad">
+                        <option value="sarcastic">
+                      </datalist>
+                </div>
+
+                <div class="keywords-bar">
+                    <div class="keywords-container flex justify-even align-center">
+                    </div>
+                </div>
+                <!-- <button class="btn btn-more">More</button> -->
+                <!-- <button class="btn btn-flexible">I'm flexible</button> -->
 
             </nav>
 
@@ -116,21 +123,7 @@
 
         <section class="about-container flex align-center display-none">
             <h2>Small Memes for big laughs</h2>
-            <div class="about-text">Hey there, I'm a passionate developer who loves creating fun and engaging games. My
-                goal is to provide you with a unique and entertaining experience that will keep you coming back for
-                more.
-
-                My latest creation is a meme generator game that allows you to create your own memes using a variety of
-                templates and share them with your friends. Whether you're a fan of classic memes or the latest viral
-                sensations, my game has something for everyone.
-
-                But my game is more than just a simple meme generator. I've added exciting features such as sharing
-                feature, which lets you share your memes on your Facebook page.
-
-                I believe that gaming should be accessible to everyone, which is why I've made my game free to play. I'm
-                constantly updating the game with new templates and features, so be sure to check back often.
-
-                I hope you enjoy playing my meme generator game as much as I enjoyed creating it.</div>
+            <div class="about-text"></div>
         </section>
 
         <section class="saved-container align-center">
@@ -139,7 +132,6 @@
         </section>
     </main>
 
-    <!-- <footer>Tamar Millgram</footer> -->
 
     <script src="js/services/utils.js"></script>
     <script src="js/services/storage.js"></script>
